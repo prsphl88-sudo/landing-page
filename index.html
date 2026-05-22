@@ -1,197 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>LaunchPad - Build Something Amazing</title>
-    <style>
-          * { margin: 0; padding: 0; box-sizing: border-box; }
-          body {
-                  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-                  color: #1a1a2e;
-                  background: #ffffff;
-          }
-          header {
-                  background: linear-gradient(160deg, #0f3443 0%, #34e89e 100%);
-                  color: white;
-                  padding: 20px 40px;
-                  display: flex;
-                  justify-content: space-between;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LaunchPad - Build Something Amazing</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1a1a2e;
+      background: #ffffff;
+      }
+      header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white;
+            padding: 20px 40px;
+              display: flex;
+                justify-content: space-between;
                   align-items: center;
-          }
-          .logo { font-size: 1.5rem; font-weight: 700; }
-          nav a {
-                  color: white;
-                  text-decoration: none;
-                  margin-left: 30px;
-                  font-weight: 500;
-                  opacity: 0.9;
-                  transition: opacity 0.3s;
-          }
-          nav a:hover { opacity: 1; }
-          .hero {
-                  background: linear-gradient(160deg, #0f3443 0%, #34e89e 100%);
-                  color: white;
-                  text-align: center;
-                  padding: 100px 20px 120px;
-          }
-          .hero h1 { font-size: 3rem; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; }
-          .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto 40px; }
-          .btn {
-                  display: inline-block;
-                  padding: 15px 40px;
-                  border-radius: 30px;
-                  font-size: 1.1rem;
-                  font-weight: 600;
-                  text-decoration: none;
-                  transition: transform 0.3s, box-shadow 0.3s;
-          }
-          .btn-primary { background: white; color: #0f3443; }
-          .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-          .btn-secondary { background: transparent; color: white; border: 2px solid white; margin-left: 15px; }
-          .features {
-                  padding: 80px 20px;
-                  max-width: 1100px;
-                  margin: 0 auto;
-          }
-          .features h2 { text-align: center; font-size: 2.2rem; margin-bottom: 60px; }
-          .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-          .feature-card {
-                  text-align: center;
-                  padding: 40px 30px;
-                  border-radius: 16px;
-                  background: #f8f9fa;
-                  transition: transform 0.3s;
-          }
-          .feature-card:hover { transform: translateY(-5px); }
-          .feature-icon { font-size: 3rem; margin-bottom: 20px; }
-          .feature-card h3 { margin-bottom: 12px; font-size: 1.3rem; }
-          .feature-card p { color: #636e72; line-height: 1.6; }
-          .pricing {
-                  background: #f8f9fa;
-                  padding: 80px 20px;
-          }
-          .pricing h2 { text-align: center; font-size: 2.2rem; margin-bottom: 60px; }
-          .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 900px; margin: 0 auto; }
-          .price-card {
-                  background: white;
-                  border-radius: 16px;
-                  padding: 40px;
-                  text-align: center;
-                  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-                  transition: transform 0.3s;
-          }
-          .price-card:hover { transform: translateY(-5px); }
-          .price-card.featured { border: 3px solid #34e89e; }
-          .price-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
-          .price { font-size: 2.5rem; font-weight: 700; color: #0f3443; margin: 15px 0; }
-          .price span { font-size: 1rem; color: #636e72; }
-          .price-card ul { list-style: none; margin: 20px 0; text-align: left; }
-          .price-card li { padding: 8px 0; color: #636e72; border-bottom: 1px solid #eee; }
-          .price-card .btn { margin-top: 20px; background: linear-gradient(135deg, #0f3443, #34e89e); color: white; }
-          .cta {
-                  text-align: center;
-                  padding: 80px 20px;
-          }
-          .cta h2 { font-size: 2.2rem; margin-bottom: 20px; }
-          .cta p { font-size: 1.2rem; color: #636e72; margin-bottom: 30px; }
-          .cta .btn { background: linear-gradient(135deg, #0f3443, #34e89e); color: white; }
-          footer {
-                  background: #1a1a2e;
-                  color: white;
-                  text-align: center;
-                  padding: 30px;
-          }
-          footer p { opacity: 0.7; }
-        </style>
-  </head>
-  <body>
-      <header>
-            <div class="logo">LaunchPad</div>div>
-            <nav>
-                    <a href="#features">Features</a>a>
-                    <a href="#pricing">Pricing</a>a>
-                    <a href="#contact">Contact</a>a>
-            </nav>
-      </header>
-      <section class="hero">
-            <h1>Build Something Amazing Today</h1>
-          <p>The all-in-one platform to launch, grow, and scale your next big idea. Start building in minutes.</p>
-          <a href="#" class="btn btn-primary">Get Started Free</a>a>
-          <a href="#features" class="btn btn-secondary">Learn More</a>a>
-      </section>section>
-    <section id="features" class="features">
-        <h2>Why Choose LaunchPad?</h2>
-        <div class="feature-grid">
-              <div class="feature-card">
-                      <div class="feature-icon">&#9889;</div>div>
-                      <h3>Lightning Fast</h3>
-                      <p>Deploy your projects in seconds with our optimized infrastructure and global CDN.</p>
-              </div>div>
-              <div class="feature-card">
-                      <div class="feature-icon">&#128274;</div>div>
-                      <h3>Secure by Default</h3>
-                      <p>Enterprise-grade security with SSL, DDoS protection, and automatic backups.</p>
-              </div>div>
-              <div class="feature-card">
-                      <div class="feature-icon">&#128200;</div>div>
-                      <h3>Scale Easily</h3>
-                      <p>Grow from zero to millions of users without worrying about infrastructure.</p>
-              </div>div>
-        </div>div>
-    </section>section>
-    <section id="pricing" class="pricing">
-        <h2>Simple Pricing</h2>
-        <div class="pricing-grid">
-              <div class="price-card">
-                      <h3>Starter</h3>
-                      <div class="price">$0<span>/month</span></div>div>
-                      <ul>
-                                  <li>1 Project</li>
-                                <li>1GB Storage</li>
-                                <li>Community Support</li>
-                                <li>Basic Analytics</li>
-                      </ul>
-                      <a href="#" class="btn">Start Free</a>a>
-              </div>div>
-              <div class="price-card featured">
-                      <h3>Professional</h3>
-                      <div class="price">$29<span>/month</span></div>div>
-                      <ul>
-                                <li>Unlimited Projects</li>
-                                <li>100GB Storage</li>
-                                <li>Priority Support</li>
-                                <li>Advanced Analytics</li>
-                      </ul>
-                      <a href="#" class="btn">Get Started</a>a>
-              </div>div>
-              <div class="price-card">
-                      <h3>Enterprise</h3>
-                      <div class="price">$99<span>/month</span></div>div>
-                      <ul>
-                                <li>Everything in Pro</li>
-                                <li>Unlimited Storage</li>
-                                <li>24/7 Dedicated Support</li>
-                                <li>Custom Integrations</li>
-                      </ul>
-                      <a href="#" class="btn">Contact Sales</a>a>
-              </div>div>
-        </div>div>
-    </section>section>
-    <section id="contact" class="cta">
-        <h2>Ready to Launch?</h2>
-        <p>Join thousands of developers building the future with LaunchPad.</p>
-        <a href="#" class="btn">Start Your Free Trial</a>a>
-    </section>section>
-    <footer>
-          <p>&copy; 2026 LaunchPad. Built with GitHub Pages.</p>p>
-    </footer>
-  </body>
-</html>html>
-    </footer></p></li></li>
-                      </ul></span></p></p></h1>
-            </nav>
-      </header>
-  </body>
-    </style></title>
-  </head>
+                  }
+                  .logo { font-size: 1.5rem; font-weight: 700; }
+                  nav a {
+                    color: white;
+                      text-decoration: none;
+                        margin-left: 30px;
+                          font-weight: 500;
+                          }
+                          .hero {
+                            text-align: center;
+                              padding: 100px 20px;
+                                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                  color: white;
+                                  }
+                                  .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+                                  .hero p { font-size: 1.3rem; margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+                                  .btn {
+                                    display: inline-block;
+                                      padding: 15px 40px;
+                                        background: white;
+                                          color: #667eea;
+                                            border-radius: 30px;
+                                              text-decoration: none;
+                                                font-weight: 700;
+                                                  font-size: 1.1rem;
+                                                    transition: transform 0.3s;
+                                                    }
+                                                    .btn:hover { transform: translateY(-2px); }
+                                                    .features {
+                                                      padding: 80px 20px;
+                                                        max-width: 1100px;
+                                                          margin: 0 auto;
+                                                          }
+                                                          .features h2 { text-align: center; font-size: 2.2rem; margin-bottom: 50px; }
+                                                          .feature-grid {
+                                                            display: grid;
+                                                              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                                                                gap: 40px;
+                                                                }
+                                                                .feature-card {
+                                                                  text-align: center;
+                                                                    padding: 40px 30px;
+                                                                      border-radius: 12px;
+                                                                        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+                                                                        }
+                                                                        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: #667eea; }
+                                                                        .feature-card p { color: #555; line-height: 1.6; }
+                                                                        .cta {
+                                                                          background: #f8f9fa;
+                                                                            text-align: center;
+                                                                              padding: 80px 20px;
+                                                                              }
+                                                                              .cta h2 { font-size: 2rem; margin-bottom: 20px; }
+                                                                              .cta p { font-size: 1.1rem; margin-bottom: 30px; color: #555; }
+                                                                              .cta .btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+                                                                              footer {
+                                                                                background: #1a1a2e;
+                                                                                  color: white;
+                                                                                    text-align: center;
+                                                                                      padding: 30px;
+                                                                                      }
+                                                                                      </style>
+                                                                                      </head>
+                                                                                      <body>
+                                                                                      <header>
+                                                                                      <div class="logo">LaunchPad</div>
+                                                                                      <nav>
+                                                                                      <a href="#features">Features</a>
+                                                                                      <a href="#pricing">Pricing</a>
+                                                                                      <a href="#contact">Contact</a>
+                                                                                      </nav>
+                                                                                      </header>
+                                                                                      <section class="hero">
+                                                                                      <h1>Build Something Amazing</h1>
+                                                                                      <p>The all-in-one platform to launch your next project. Fast, reliable, and beautifully designed.</p>
+                                                                                      <a href="#start" class="btn">Get Started Free</a>
+                                                                                      </section>
+                                                                                      <section class="features" id="features">
+                                                                                      <h2>Why Choose LaunchPad?</h2>
+                                                                                      <div class="feature-grid">
+                                                                                      <div class="feature-card">
+                                                                                      <h3>Lightning Fast</h3>
+                                                                                      <p>Optimized for speed with global CDN delivery. Your site loads in milliseconds, not seconds.</p>
+                                                                                      </div>
+                                                                                      <div class="feature-card">
+                                                                                      <h3>Easy to Use</h3>
+                                                                                      <p>Intuitive interface that anyone can use. No coding required to get started.</p>
+                                                                                      </div>
+                                                                                      <div class="feature-card">
+                                                                                      <h3>Secure by Default</h3>
+                                                                                      <p>Enterprise-grade security built in. SSL certificates, DDoS protection, and automatic backups.</p>
+                                                                                      </div>
+                                                                                      </div>
+                                                                                      </section>
+                                                                                      <section class="cta" id="contact">
+                                                                                      <h2>Ready to Launch?</h2>
+                                                                                      <p>Join thousands of creators who trust LaunchPad for their projects.</p>
+                                                                                      <a href="#start" class="btn">Start Building Today</a>
+                                                                                      </section>
+                                                                                      <footer>
+                                                                                      <p>2026 LaunchPad. All rights reserved. Built with GitHub Pages.</p>
+                                                                                      </footer>
+                                                                                      </body>
+                                                                                      </html>
